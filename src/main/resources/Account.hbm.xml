@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Entities.Account" table="taikhoan" catalog="quanlydiemsv">
+        <id name="username" type="java.lang.String">
+            <column name="username" />
+            <generator class="identity" />
+        </id>
+        <property name="password" type="java.lang.String">
+            <column length="100" name="password" />
+        </property>
+        <property name="MSSV" type="int">
+            <column length="25" name="MSSV" />
+        </property>
+    </class>
+</hibernate-mapping>
