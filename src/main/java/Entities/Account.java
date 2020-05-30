@@ -1,5 +1,11 @@
 package Entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 public class Account {
     protected String username;
     protected String password;
@@ -15,9 +21,11 @@ public class Account {
         this.MSSV = m;
     }
 
+
     public int getMSSV() {
         return MSSV;
     }
+
 
     public String getPassword() {
         return password;

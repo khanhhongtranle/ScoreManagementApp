@@ -8,13 +8,13 @@
             com.mysql.jdbc.Driver
         </property>
         <property name="hibernate.connection.url">
-            http://localhost:8080/phpmyadmin
+            jdbc:mysql://localhost:8080/quanlydiemsv
         </property>
         <property name="hibernate.connection.username">
-            root
+            user
         </property>
         <property name="hibernate.connection.password">
-            1234567890
+            user
         </property>
 
         <!-- JDBC connection pool (use the built-in) -->
