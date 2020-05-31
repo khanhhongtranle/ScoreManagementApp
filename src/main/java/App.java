@@ -1,16 +1,17 @@
-import Util.HibernateUtil;
-import Manager.ManageAccount;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import Controller.LoginController;
+import Views.LoginView;
+import Views.StudentManagerView;
+
+import java.awt.*;
 
 public class App {
-    private static SessionFactory sessionFactory;
-
     public static void main(String[] agrs){
-
-        ManageAccount manageAccount = new ManageAccount();
-
-        manageAccount.listAllAccounts();
-
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                LoginView view = new LoginView();
+                LoginController controller = new LoginController(view);
+                controller.showLoginView();
+            }
+        });
     }
 }

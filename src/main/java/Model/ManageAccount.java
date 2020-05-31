@@ -1,31 +1,33 @@
-package Manager;
+package Model;
 
-import Entities.Account;
 import Util.HibernateUtil;
 import org.hibernate.*;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class ManageAccount {
     //private SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     private Session session = HibernateUtil.getSessionFactory().openSession();
+    //private Session session;
     private Transaction transaction;
 
+    /*public ManageAccount(Session session){
+        this.session = session;
+    }*/
+
     //READ all accounts in 'taikhoan' table
-    public void listAllAccounts(){
-        //Session session = sessionFactory.openSession();
+    public List listAllAccounts(){
+        //session = session.getSessionFactory().openSession();
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
         transaction = session.beginTransaction();
+        List accounts = null;
         try{
             String sql = "SELECT a FROM Account as a";
-            List accounts = session.createQuery(sql).list();
-            for (Iterator iterator = accounts.iterator(); iterator.hasNext(); ){
-                Account account = (Account) iterator.next();
-                System.out.println(account.getUsername());
-                System.out.println(account.getPassword());
-                System.out.println(account.getMSSV());
-            }
+            accounts = session.createQuery(sql).list();
             transaction.commit();
+            //return accounts;
         }catch (HibernateException e){
             if (transaction != null){
                 transaction.rollback();
@@ -34,5 +36,6 @@ public class ManageAccount {
         }finally {
             session.close();
         }
+        return accounts;
     }
 }

@@ -1,32 +1,27 @@
-package Entities;
+package Model.Entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.io.Serializable;
 
 
 public class Account implements Serializable {
     protected String username;
     protected String password;
-    protected int MSSV;
+    protected Integer MSSV;
 
     public Account(){
 
     }
 
-    public Account(String u, String p, int m){
+    public Account(String u, String p, Integer m){
         this.username = u;
         this.password = p;
         this.MSSV = m;
     }
 
 
-    public int getMSSV() {
+    public Integer getMSSV() {
         return MSSV;
     }
-
 
     public String getPassword() {
         return password;
@@ -36,7 +31,7 @@ public class Account implements Serializable {
         return username;
     }
 
-    public void setMSSV(int MSSV) {
+    public void setMSSV(Integer MSSV) {
         this.MSSV = MSSV;
     }
 
@@ -46,5 +41,12 @@ public class Account implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public boolean isTeacher(){
+        if (getMSSV()==null){
+            return true;
+        }
+        return false;
     }
 }
