@@ -2,6 +2,7 @@ package Views;
 
 import Model.Entities.Account;
 import Model.ManageAccount;
+import Util.MD5Util;
 import org.mortbay.jetty.security.Password;
 
 import javax.swing.*;
@@ -29,7 +30,7 @@ public class LoginView extends JFrame{
     }
 
     public Account getAccount(){
-        Account account = new Account(usernameField.getText(),getMD5(new String(passwordField.getPassword())),null);
+        Account account = new Account(usernameField.getText(), new MD5Util().getMD5(new String(passwordField.getPassword())),null);
         return account;
     }
 
@@ -41,19 +42,4 @@ public class LoginView extends JFrame{
         JOptionPane.showMessageDialog(panel1, message);
     }
 
-    public String getMD5(String md5){
-        try{
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            String s;
-            byte[] array = md.digest(md5.getBytes());
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i<array.length; i++){
-                stringBuilder.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
-            }
-            return stringBuilder.toString();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return null;
-    }
 }

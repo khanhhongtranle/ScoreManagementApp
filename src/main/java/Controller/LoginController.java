@@ -8,16 +8,16 @@ import Views.TeacherManagerView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.security.MessageDigest;
-import java.util.Iterator;
 import java.util.List;
 
 public class LoginController {
     private LoginView view;
     private StudentManagerView studentView;
+    private StudentManagerController studentController;
     private TeacherManagerView teacherView;
-    ManageAccount manageAccount = new ManageAccount();
-    List accountsList = manageAccount.listAllAccounts();
+    private TeacherManagerController teacherController;
+    private ManageAccount manageAccount = new ManageAccount();
+    private List accountsList = manageAccount.listAllAccounts();
 
     public LoginController(LoginView view){
         this.view = view;
@@ -48,9 +48,17 @@ public class LoginController {
                 if (success){
                     //login successfully
                     if (account.isTeacher()){
-
+                        view.setVisible(false);
+                        view.dispose();
+                        teacherView = new TeacherManagerView(account);
+                        teacherController = new TeacherManagerController(teacherView);
+                        teacherController.showView();
                     }else{
+                        view.setVisible(false);
+                        view.dispose();
                         studentView = new StudentManagerView(account);
+                        studentController = new StudentManagerController(studentView,account);
+                        studentController.showView();
                     }
                 }
                 else {
@@ -61,5 +69,4 @@ public class LoginController {
             }
         }
     }
-
 }

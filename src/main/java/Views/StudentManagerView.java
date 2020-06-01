@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class StudentManagerView {
+public class StudentManagerView extends JFrame {
     private JPanel panel1;
     private JButton checkMarkButton;
     private JButton complainButton;
@@ -17,40 +17,22 @@ public class StudentManagerView {
 
     public StudentManagerView(Account account) {
 
-        JFrame frame = new JFrame("Quản lý điểm sinh viên");
+        this.setTitle("Sinh viên");
         panel1.setBorder(BorderFactory.createLineBorder(Color.blue));
         //panel1.setLayout(new BorderLayout(1, 1));
         panel1.setPreferredSize(new Dimension(400, 300));
-        frame.setContentPane(panel1);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+        this.setContentPane(panel1);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.pack();
 
-        label.setText(label.getText() + account.getUsername());
+        label.setText(label.getText() + " " + account.getUsername());
+    }
 
-        checkMarkButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+    public void logoutListener(ActionListener actionListener){
+        logoutButton.addActionListener(actionListener);
+    }
 
-            }
-        });
-        complainButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        changePasswordButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        logoutButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+    public void changePasswordListener(ActionListener actionListener){
+        changePasswordButton.addActionListener(actionListener);
     }
 }
