@@ -1,11 +1,12 @@
+package App;
+
 import Controller.LoginController;
 import Views.LoginView;
-import Views.StudentManagerView;
 
 import java.awt.*;
 
-public class App {
-    public static void main(String[] agrs){
+public class Main {
+    public static void main(String[] args){
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 LoginView view = new LoginView();

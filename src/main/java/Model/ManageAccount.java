@@ -14,7 +14,6 @@ public class ManageAccount {
 
     //READ all accounts in 'taikhoan' table
     public List listAllAccounts(){
-        //session = session.getSessionFactory().openSession();
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();
         }
@@ -36,6 +35,31 @@ public class ManageAccount {
         return accounts;
     }
 
+    //READ a account record in 'taikhoan' table where taikhoan.username = un
+    public Account getAccountRecord(String un){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List<Account> accounts = null;
+        try{
+            String hql = "SELECT a FROM Account as a where a.id = :un_id";
+            Query query= session.createQuery(hql);
+            query.setParameter("un_id",un);
+            accounts = query.list();
+            transaction.commit();
+            return accounts.get(0);
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return null;
+    }
+
     //READ 'password' column in 'taikhoan' table where 'username' = un
     public String getPasswordAt(String un){
         if (!session.isOpen()){
@@ -44,8 +68,9 @@ public class ManageAccount {
         transaction = session.beginTransaction();
         List pw = null;
         try{
-            String hql = "SELECT a.password FROM Account as a where a.username =" + un;
+            String hql = "SELECT a.password FROM Account as a where a.username = :un";
             Query query= session.createQuery(hql);
+            query.setParameter("un",un);
             pw = query.list();
             transaction.commit();
             return pw.get(0).toString();
@@ -67,10 +92,11 @@ public class ManageAccount {
         }
         transaction = session.beginTransaction();
         try{
-            String hql = "UPDATE Account set password = " +account.getPassword()
-                    + " WHERE username ="+account.getUsername();
+            String hql = "UPDATE Account set password = :new_pass"
+                    + " WHERE username = :un";
             Query query= session.createQuery(hql);
-            //query.setParameter("username")
+            query.setParameter("new_pass",account.getPassword());
+            query.setParameter("un",account.getUsername());
             query.executeUpdate();
             transaction.commit();
 

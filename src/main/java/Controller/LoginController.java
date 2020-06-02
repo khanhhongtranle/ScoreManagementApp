@@ -17,7 +17,6 @@ public class LoginController {
     private TeacherManagerView teacherView;
     private TeacherManagerController teacherController;
     private ManageAccount manageAccount = new ManageAccount();
-    private List accountsList = manageAccount.listAllAccounts();
 
     public LoginController(LoginView view){
         this.view = view;
@@ -34,38 +33,30 @@ public class LoginController {
         public void actionPerformed(ActionEvent e) {
             Account account = view.getAccount();
 
-            boolean success = false;
+            Account accountInDB = manageAccount.getAccountRecord(account.getUsername());
 
-            if (accountsList != null) {
-                for (int i=0;i < accountsList.size();i++ ) {
-                    Account accountInDB = (Account) accountsList.get(i);
-                    if (accountInDB.getUsername().equals(account.getUsername()) && accountInDB.getPassword().equals(account.getPassword())) {
-                        success = true;
-                        account = accountInDB;
-                        break;
-                    }
-                }
-                if (success){
+            if (accountInDB != null) {
+                if (accountInDB.getUsername().equals(account.getUsername()) && accountInDB.getPassword().equals(account.getPassword())) {
+
+                    account = accountInDB;
                     //login successfully
-                    if (account.isTeacher()){
+                    if (account.isTeacher()) {
                         view.setVisible(false);
                         view.dispose();
                         teacherView = new TeacherManagerView(account);
                         teacherController = new TeacherManagerController(teacherView);
                         teacherController.showView();
-                    }else{
+                    } else {
                         view.setVisible(false);
                         view.dispose();
                         studentView = new StudentManagerView(account);
-                        studentController = new StudentManagerController(studentView,account);
+                        studentController = new StudentManagerController(studentView, account);
                         studentController.showView();
                     }
                 }
                 else {
                     view.showMessage("Tên đăng nhập hoặc mật khẩu chưa đúng");
                 }
-            } else {
-                view.showMessage("Lỗi. Vui lòng thực hiện lại sau giây lát.");
             }
         }
     }
