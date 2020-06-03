@@ -1,14 +1,15 @@
 package Controller;
 
+import Controller.Student.StudentManagerController;
+import Controller.Teacher.TeacherManagerController;
 import Model.Entities.Account;
 import Model.ManageAccount;
 import Views.LoginView;
 import Views.StudentManagerView;
-import Views.TeacherManagerView;
+import Views.Teacher.TeacherManagerView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 public class LoginController {
     private LoginView view;
@@ -44,7 +45,7 @@ public class LoginController {
                         view.setVisible(false);
                         view.dispose();
                         teacherView = new TeacherManagerView(account);
-                        teacherController = new TeacherManagerController(teacherView);
+                        teacherController = new TeacherManagerController(teacherView, account);
                         teacherController.showView();
                     } else {
                         view.setVisible(false);

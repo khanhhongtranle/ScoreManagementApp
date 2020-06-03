@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.Entities.AClass" table="lop" catalog="quanlydiemsv">
+        <id name="stt" type="int">
+            <column name="stt" />
+            <generator class="identity" />
+        </id>
+        <property name="className" type="java.lang.String">
+            <column length="15" name="tenlop" />
+        </property>
+    </class>
+</hibernate-mapping>

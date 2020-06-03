@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.Entities.Student" table="sinhvien" catalog="quanlydiemsv">
+        <id name="MSSV" type="java.lang.String">
+            <column name="MSSV" />
+
+        </id>
+        <property name="studentName" type="java.lang.String">
+            <column length="100" name="HoTen" />
+        </property>
+        <property name="studentSex" type="java.lang.String">
+            <column length="25" name="GioiTinh" />
+        </property>
+        <property name="studentNationID" type="java.lang.String">
+            <column length="25" name="CMND" />
+        </property>
+        <property name="classNo" type="int">
+            <column length="25" name="Lop" />
+        </property>
+    </class>
+</hibernate-mapping>

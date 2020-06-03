@@ -1,20 +1,26 @@
-package Controller;
+package Controller.Student;
 
+import Controller.ChangePasswordController;
+import Controller.LoginController;
+import Model.Entities.Account;
 import Views.LoginView;
-import Views.TeacherManagerView;
+import Views.StudentManagerView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TeacherManagerController {
-    private TeacherManagerView view;
+public class StudentManagerController {
+    private StudentManagerView view;
     private LoginView loginView;
     private LoginController loginController;
+    private Account account;
 
-    public TeacherManagerController(TeacherManagerView view){
+    public StudentManagerController(StudentManagerView view, Account account){
+        this.account = account;
         this.view = view;
 
         view.logoutListener(new LogoutListener());
+        view.changePasswordListener(new ChangePasswordListener());
     }
 
     public void showView(){
@@ -24,7 +30,7 @@ public class TeacherManagerController {
     public void closeView(){
         view.setVisible(false);
     }
-    
+
     class LogoutListener implements ActionListener {
 
         @Override
@@ -36,4 +42,11 @@ public class TeacherManagerController {
         }
     }
 
+    class ChangePasswordListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ChangePasswordController changePasswordController = new ChangePasswordController(account);
+        }
+    }
 }

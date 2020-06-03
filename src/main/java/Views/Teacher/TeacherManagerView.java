@@ -1,4 +1,4 @@
-package Views;
+package Views.Teacher;
 
 import Model.Entities.Account;
 
@@ -12,7 +12,7 @@ public class TeacherManagerView extends JFrame {
     private JButton manageStudentsButton;
     private JButton manageScheduleButton;
     private JButton manageClassButton;
-    private JButton manageMarkCủaButton;
+    private JButton manageMarkButton;
     private JButton manageComplainButton;
     private JButton logoutButton;
     private JLabel label;
@@ -36,5 +36,9 @@ public class TeacherManagerView extends JFrame {
 
     public void changePasswordListener(ActionListener actionListener){
         changePasswordButton.addActionListener(actionListener);
+    }
+
+    public void manageStudentsListener(ActionListener actionListener){
+        manageStudentsButton.addActionListener(actionListener);
     }
 }
