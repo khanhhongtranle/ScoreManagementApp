@@ -58,4 +58,26 @@ public class ManageClass {
             session.close();
         }
     }
+
+    public List<String> getAllOfClass(){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List classes = null;
+        try{
+            String hql = "SELECT a.className FROM AClass as a";
+            classes = session.createQuery(hql).list();
+            transaction.commit();
+            //return accounts;
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return classes;
+    }
 }
