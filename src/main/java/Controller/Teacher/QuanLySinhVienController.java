@@ -19,6 +19,7 @@ public class QuanLySinhVienController {
 
         view.importListener(new ImportListener());
         view.confirmListener(new ConfirmListener());
+        view.addStudentListener(new AddListener());
     }
 
     private class ImportListener implements ActionListener{
@@ -38,6 +39,14 @@ public class QuanLySinhVienController {
             int STT = manageClass.getClassAtClassName(view.getStringInComBox()).getStt();
             List<Student> list = manageStudent.getAllOfStudentInClass(STT);
             view.setUpDataTable(list);
+        }
+    }
+
+    private class AddListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            AddAStudentController addAStudentController = new AddAStudentController();
         }
     }
 }

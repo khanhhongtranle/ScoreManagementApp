@@ -41,4 +41,8 @@ public class TeacherManagerView extends JFrame {
     public void manageStudentsListener(ActionListener actionListener){
         manageStudentsButton.addActionListener(actionListener);
     }
+
+    public void manageScheduleListener(ActionListener actionListener){
+        manageScheduleButton.addActionListener(actionListener);
+    }
 }

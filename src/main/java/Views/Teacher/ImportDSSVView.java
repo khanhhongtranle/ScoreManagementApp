@@ -14,7 +14,6 @@ public class ImportDSSVView extends JFrame {
     public ImportDSSVView(){
         this.setTitle("Import file danh sách sinh viên");
         panel1.setBorder(BorderFactory.createLineBorder(Color.blue));
-        //panel1.setLayout(new BorderLayout(1, 1));
         panel1.setPreferredSize(new Dimension(300, 200));
         this.setContentPane(panel1);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

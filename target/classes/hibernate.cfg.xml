@@ -33,5 +33,7 @@
         <mapping resource="Account.hbm.xml"/>
         <mapping resource="Class.hbm.xml"/>
         <mapping resource="Student.hbm.xml"/>
+        <mapping resource="Subject.hbm.xml"/>
+        <mapping resource="Schedule.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

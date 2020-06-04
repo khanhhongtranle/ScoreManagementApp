@@ -56,4 +56,30 @@ public class ManageStudent {
         return list;
     }
 
+    public Student getStudentAtMSSV(String MSSV){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List<Student> std = null;
+        try{
+            String hql = "SELECT a FROM Student as a where a.MSSV = :m";
+            Query query= session.createQuery(hql);
+            query.setParameter("m",MSSV);
+            std = query.list();
+            transaction.commit();
+            if (std.size() == 0){
+                return null;
+            }
+            return std.get(0);
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return null;
+    }
 }

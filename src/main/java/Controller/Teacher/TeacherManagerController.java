@@ -22,6 +22,7 @@ public class TeacherManagerController {
         view.logoutListener(new LogoutListener());
         view.changePasswordListener(new ChangePasswordListener());
         view.manageStudentsListener(new ManageStudentsListener());
+        view.manageScheduleListener(new ManageScheduleListener());
     }
 
     public void showView(){
@@ -56,6 +57,14 @@ public class TeacherManagerController {
         @Override
         public void actionPerformed(ActionEvent e) {
             QuanLySinhVienController QLSVController = new QuanLySinhVienController();
+        }
+    }
+
+    class ManageScheduleListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            QuanLyTKBController quanLyTKBController = new QuanLyTKBController();
         }
     }
 }

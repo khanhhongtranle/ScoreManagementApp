@@ -63,7 +63,8 @@ public class ImportDSSVController {
             manageClass.insertInto(newClass);
             newClass = manageClass.getClassAtClassName(view.getTenLop());
             CSVReaderUtil readerUtil = new CSVReaderUtil(view.getURLFILE());
-            List<Student> studentList = readerUtil.read();
+            readerUtil.readList(0);
+            List<Student> studentList = readerUtil.getListStudent();
             for (Student std : studentList){
                 std.setClassNo(newClass.getStt());
                 manageStudent.insertInto(std);
