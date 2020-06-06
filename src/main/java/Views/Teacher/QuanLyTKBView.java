@@ -1,5 +1,6 @@
 package Views.Teacher;
 
+import Model.Entities.ScheduleToSee;
 import Model.Entities.Student;
 import Model.ManageClass;
 
@@ -63,7 +64,7 @@ public class QuanLyTKBView extends JFrame {
         }
     }
 
-    public void setUpDataTable(List<Student> listData){
+    public void setUpDataTable(List<ScheduleToSee> listData){
 
         clearDataTable();
 
@@ -72,10 +73,9 @@ public class QuanLyTKBView extends JFrame {
         for (int i = 0; i < listData.size(); i++) {
             String[] data = new String[7];
 
-            data[0] = listData.get(i).getMSSV();
-            data[1] = listData.get(i).getStudentName();
-            data[2] = listData.get(i).getStudentSex();
-            data[3] = listData.get(i).getStudentNationID();
+            data[0] = listData.get(i).getMaMonHoc();
+            data[1] = listData.get(i).getTenMonHoc();
+            data[2] = listData.get(i).getPhongHoc();
 
             defaultTableModel.addRow(data);
         }

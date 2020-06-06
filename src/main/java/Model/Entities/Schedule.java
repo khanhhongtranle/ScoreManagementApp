@@ -1,6 +1,5 @@
 package Model.Entities;
 
-import javax.persistence.*;
 import java.io.Serializable;
 
 //@Entity
@@ -21,18 +20,18 @@ public class Schedule implements Serializable {
     protected String room;
 
     //@Column (name = "PhongHoc")
-    protected primaryKey_Schedule key;
+    protected PrimaryKey_Schedule key;
 
-    public primaryKey_Schedule getKey() {
+    public PrimaryKey_Schedule getKey() {
         return key;
     }
 
-    public void setKey(primaryKey_Schedule key) {
+    public void setKey(PrimaryKey_Schedule key) {
         this.key = key;
     }
 
     public Schedule(){
-        key = new primaryKey_Schedule();
+        key = new PrimaryKey_Schedule();
     }
 
     public Schedule(int cno, String sno, String r){

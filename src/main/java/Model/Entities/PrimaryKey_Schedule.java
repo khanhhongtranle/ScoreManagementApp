@@ -3,11 +3,11 @@ package Model.Entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class primaryKey_Schedule implements Serializable {
+public class PrimaryKey_Schedule implements Serializable {
     protected int classNo;
     protected String subNo;
 
-    public primaryKey_Schedule(){
+    public PrimaryKey_Schedule(){
 
     }
 
@@ -31,7 +31,7 @@ public class primaryKey_Schedule implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        primaryKey_Schedule that = (primaryKey_Schedule) o;
+        PrimaryKey_Schedule that = (PrimaryKey_Schedule) o;
         return classNo == that.classNo &&
                 Objects.equals(subNo, that.subNo);
     }

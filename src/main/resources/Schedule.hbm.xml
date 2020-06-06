@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="Model.Entities.Schedule" table="thoikhoabieu" catalog="quanlydiemsv">
-        <composite-id name="key" class="Model.Entities.primaryKey_Schedule">
+        <composite-id name="key" class="Model.Entities.PrimaryKey_Schedule">
             <key-property name="classNo" column="STTLop" type="java.lang.Integer" />
             <key-property name="subNo" column="MaMonHoc" type="java.lang.String"/>
         </composite-id>
