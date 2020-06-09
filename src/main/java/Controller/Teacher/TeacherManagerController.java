@@ -23,6 +23,7 @@ public class TeacherManagerController {
         view.changePasswordListener(new ChangePasswordListener());
         view.manageStudentsListener(new ManageStudentsListener());
         view.manageScheduleListener(new ManageScheduleListener());
+        view.manageClassListener(new ManageClassListener());
     }
 
     public void showView(){
@@ -33,7 +34,7 @@ public class TeacherManagerController {
         view.setVisible(false);
     }
     
-    class LogoutListener implements ActionListener {
+    private class LogoutListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -44,7 +45,7 @@ public class TeacherManagerController {
         }
     }
 
-    class ChangePasswordListener implements ActionListener{
+    private class ChangePasswordListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -52,7 +53,7 @@ public class TeacherManagerController {
         }
     }
 
-    class ManageStudentsListener implements ActionListener{
+    private class ManageStudentsListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -60,11 +61,19 @@ public class TeacherManagerController {
         }
     }
 
-    class ManageScheduleListener implements ActionListener{
+    private class ManageScheduleListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
             QuanLyTKBController quanLyTKBController = new QuanLyTKBController();
+        }
+    }
+
+    private class ManageClassListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            QuanLyLopController quanLyLopController = new QuanLyLopController();
         }
     }
 }
