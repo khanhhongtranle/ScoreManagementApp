@@ -82,4 +82,25 @@ public class ManageStudent {
         }
         return null;
     }
+
+    public List<Student> getAllOfStudent(){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List<Student> list = null;
+        try{
+            String hql = "SELECT a FROM Student as a";
+            list= session.createQuery(hql).list();
+            transaction.commit();
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return list;
+    }
 }

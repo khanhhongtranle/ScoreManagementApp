@@ -20,6 +20,7 @@ public class QuanLyLopView extends JFrame{
     private JButton addButton;
     private JButton xemButton;
     private JScrollPane scrollPane;
+    private JButton deleteButton;
 
     public QuanLyLopView(){
         this.setTitle("Quản lý lớp học");
@@ -115,5 +116,9 @@ public class QuanLyLopView extends JFrame{
 
     public void addButtonListener(ActionListener listener){
         addButton.addActionListener(listener);
+    }
+
+    public void deleteButtonListener(ActionListener listener){
+        deleteButton.addActionListener(listener);
     }
 }

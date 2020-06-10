@@ -60,4 +60,27 @@ public class ManageStudentsInClass {
         }
         return null;
     }
+
+    public void dropARecord(int STTLop, String MaMonHoc, String MSSV){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        try{
+            String hql = "DELETE StudentsInClass as a WHERE a.key.classNo = :s and a.key.subNo = :m and a.key.MSSV = :ms ";
+            Query query = session.createQuery(hql);
+            query.setParameter("s", STTLop);
+            query.setParameter("m", MaMonHoc);
+            query.setParameter("ms", MSSV);
+            query.executeUpdate();
+            transaction.commit();
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+    }
 }

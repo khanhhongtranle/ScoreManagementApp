@@ -20,6 +20,8 @@ public class QuanLyLopController {
 
         view.comboBoxClassListener(new ComboBoxClassListener());
         view.xemButtonListener(new XemListener());
+        view.addButtonListener(new AddListener());
+        view.deleteButtonListener(new DeleteListener());
     }
 
     private class ComboBoxClassListener implements ItemListener {
@@ -66,6 +68,22 @@ public class QuanLyLopController {
             }
 
             view.setUpDataTable(dsHs);
+        }
+    }
+
+    private class AddListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            ThemSvVaoLopTheoMonController themSvVaoLopTheoMonController = new ThemSvVaoLopTheoMonController(view);
+        }
+    }
+
+    private class DeleteListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            XoaSvKhoiLopTheoMonController xoaSvKhoiLopTheoMonController = new XoaSvKhoiLopTheoMonController(view);
         }
     }
 }
