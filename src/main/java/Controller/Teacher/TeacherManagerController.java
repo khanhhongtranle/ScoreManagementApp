@@ -24,6 +24,7 @@ public class TeacherManagerController {
         view.manageStudentsListener(new ManageStudentsListener());
         view.manageScheduleListener(new ManageScheduleListener());
         view.manageClassListener(new ManageClassListener());
+        view.manageMarkListener(new ManageMark());
     }
 
     public void showView(){
@@ -74,6 +75,14 @@ public class TeacherManagerController {
         @Override
         public void actionPerformed(ActionEvent e) {
             QuanLyLopController quanLyLopController = new QuanLyLopController();
+        }
+    }
+
+    private class ManageMark implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            QuanLyDiemController quanLyDiemController = new QuanLyDiemController();
         }
     }
 }

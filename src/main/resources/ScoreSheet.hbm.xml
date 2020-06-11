@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.Entities.ScoreSheet" table="bangdiem" catalog="quanlydiemsv">
+        <composite-id name="key" class="Model.Entities.PrimaryKey_StudentsInClass">
+            <key-property name="classNo" column="STTLop" type="java.lang.Integer" />
+            <key-property name="subNo" column="MaMonHoc" type="java.lang.String"/>
+            <key-property name="MSSV" column="MSSV" type="java.lang.String"/>
+        </composite-id>
+
+        <property name="studentName" type="java.lang.String">
+            <column length="50" name="HoTen" />
+        </property>
+        <property name="midTermScore" type="float">
+            <column length="25" name="DiemGK" />
+        </property>
+        <property name="finalTermScore" type="float">
+            <column length="25" name="DiemCK" />
+        </property>
+        <property name="anotherScore" type="float">
+            <column length="25" name="DiemKhac" />
+        </property>
+        <property name="finalGrade" type="float">
+            <column length="25" name="DiemTongKet" />
+        </property>
+    </class>
+</hibernate-mapping>

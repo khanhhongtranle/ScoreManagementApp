@@ -1,6 +1,7 @@
 package Util;
 
 import Model.Entities.Schedule;
+import Model.Entities.ScoreSheet;
 import Model.Entities.Student;
 import Model.Entities.Subject;
 import com.opencsv.CSVReader;
@@ -16,12 +17,14 @@ public class CSVReaderUtil {
     private List<Student> listStudent;
     private List<Schedule> listSchedule;
     private List<Subject> listSubject;
+    private List<ScoreSheet> listScore;
 
     public CSVReaderUtil(String url){
         this.FileURL = url;
         this.listStudent = null;
         this.listSchedule = null;
         this.listSubject = null;
+        this.listScore = null;
     }
 
     public List<Schedule> getListSchedule() {
@@ -34,6 +37,10 @@ public class CSVReaderUtil {
 
     public List<Subject> getListSubject() {
         return listSubject;
+    }
+
+    public List<ScoreSheet> getListScore() {
+        return listScore;
     }
 
     public void readList(int mode){
@@ -65,7 +72,7 @@ public class CSVReaderUtil {
                     }
                     listSchedule = schedules;
                     break;
-                default:
+                case 2:
                     List<Subject> subjects = new ArrayList<Subject>();
                     while ((line = reader.readNext()) != null){
                         Subject subject = new Subject();
@@ -74,6 +81,23 @@ public class CSVReaderUtil {
                         subjects.add(subject);
                     }
                     listSubject = subjects;
+                    break;
+                case 3:
+                    List<ScoreSheet> scoreSheets = new ArrayList<>();
+                    while ((line = reader.readNext()) != null){
+                        ScoreSheet scoreSheet1 = new ScoreSheet();
+                        scoreSheet1.getKey().setMSSV(line[0]);
+                        scoreSheet1.setStudentName(line[1]);
+                        scoreSheet1.setMidTermScore(Float.parseFloat(line[2]));
+                        scoreSheet1.setFinalTermScore(Float.parseFloat(line[3]));
+                        scoreSheet1.setAnotherScore(Float.parseFloat(line[4]));
+                        scoreSheet1.setFinalGrade(Float.parseFloat(line[5]));
+                        scoreSheets.add(scoreSheet1);
+                    }
+                    listScore = scoreSheets;
+                    break;
+                default:
+                    //
             }
 
         }
