@@ -48,6 +48,9 @@ public class ManageAccount {
             query.setParameter("un_id",un);
             accounts = query.list();
             transaction.commit();
+            if (accounts.size() == 0){
+                return null;
+            }
             return accounts.get(0);
         }catch (HibernateException e){
             if (transaction != null){

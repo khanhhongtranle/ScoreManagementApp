@@ -93,6 +93,34 @@ public class ManageScoreSheet {
         return null;
     }
 
+    public ScoreSheet getARecordBySubNoAndMSSV(String MaMonHoc, String MSSV){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List<ScoreSheet> record = null;
+        try{
+            String hql = "SELECT a FROM ScoreSheet as a where  a.key.subNo = :s and a.key.MSSV = :ms";
+            Query query= session.createQuery(hql);
+            query.setParameter("s", MaMonHoc);
+            query.setParameter("ms", MSSV);
+            record =  query.list();
+            transaction.commit();
+            if (record.size() == 0){
+                return null;
+            }
+            return record.get(0);
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return null;
+    }
+
     public void dropARecord(int STTLop, String MaMonHoc, String MSSV){
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();

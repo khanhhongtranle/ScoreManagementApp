@@ -1,4 +1,4 @@
-package Views;
+package Views.Student;
 
 import Model.Entities.Account;
 
@@ -14,8 +14,10 @@ public class StudentManagerView extends JFrame {
     private JButton changePasswordButton;
     private JButton logoutButton;
     private JLabel label;
+    private Account account;
 
     public StudentManagerView(Account account) {
+        this.account = account;
 
         this.setTitle("Sinh viên");
         panel1.setBorder(BorderFactory.createLineBorder(Color.blue));
@@ -34,5 +36,17 @@ public class StudentManagerView extends JFrame {
 
     public void changePasswordListener(ActionListener actionListener){
         changePasswordButton.addActionListener(actionListener);
+    }
+
+    public void checkMarkListener(ActionListener actionListener){
+        checkMarkButton.addActionListener(actionListener);
+    }
+
+    public void complainListener(ActionListener actionListener){
+        complainButton.addActionListener(actionListener);
+    }
+
+    public String getMSSV(){
+        return account.getUsername();
     }
 }

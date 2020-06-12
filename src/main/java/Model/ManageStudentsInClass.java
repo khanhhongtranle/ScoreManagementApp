@@ -61,6 +61,33 @@ public class ManageStudentsInClass {
         return null;
     }
 
+    public List<String> getListSubjectsOfAStudent(String mssv){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List<String> std = null;
+        try{
+            String hql = "SELECT a.key.subNo FROM StudentsInClass as a where a.key.MSSV = :mssv";
+            Query query= session.createQuery(hql);
+            query.setParameter("mssv",mssv);
+            std = query.list();
+            transaction.commit();
+            if (std.size() == 0){
+                return null;
+            }
+            return std;
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return null;
+    }
+
     public void dropARecord(int STTLop, String MaMonHoc, String MSSV){
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();

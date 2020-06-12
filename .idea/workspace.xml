@@ -20,11 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="373a6f96-913b-4940-bac7-c67b5017e4fb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/Student/TraCuuDiemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Views/Student/TraCuuDiemView.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Views/Student/TraCuuDiemView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyDiemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyDiemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Student/StudentManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Student/StudentManagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ManageAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ManageAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/ManageScoreSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ManageScoreSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyDiemView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyDiemView.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyDiemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyDiemView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ManageStudentsInClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ManageStudentsInClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/StudentManagerView.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Student/StudentManagerView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/StudentManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Student/StudentManagerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/LoginController$LoginListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LoginController$LoginListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$ChangePasswordListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$ChangePasswordListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$LogoutListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$LogoutListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Model/ManageStudentsInClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Model/ManageStudentsInClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/StudentManagerView.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,15 +72,18 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="138" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MD5_password" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32873562" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Controller" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\demo\ltudjava-summer2020-1712465-bt2\src\main\java\Views\Student" />
+      <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\demo\ltudjava-summer2020-1712465-bt2\src\main\java\Views\Teacher" />
+      <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\demo\ltudjava-summer2020-1712465-bt2\src\main\resources" />
+      <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\ltudjava-summer2020-1712465-bt2\demo\ltudjava-summer2020-1712465-bt2\src\main\resources" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\demo\ltudjava-summer2020-1712465-bt2\src\main\java\Views" />
@@ -76,10 +92,8 @@
       <recent name="" />
       <recent name="Entities" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\demo\ltudjava-summer2020-1712465-bt2\src\main\java\Views\Teacher" />
-      <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\demo\ltudjava-summer2020-1712465-bt2\src\main\resources" />
-      <recent name="D:\STUDY\NAM_BA\LAP_TRINH_JAVA\Project_Hibernate\ltudjava-summer2020-1712465-bt2\demo\ltudjava-summer2020-1712465-bt2\src\main\resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Controller" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -142,7 +156,7 @@
       <workItem from="1591708161848" duration="3876000" />
       <workItem from="1591789958532" duration="7075000" />
       <workItem from="1591879732164" duration="6660000" />
-      <workItem from="1591948839696" duration="5752000" />
+      <workItem from="1591948839696" duration="8718000" />
     </task>
     <servers />
   </component>
@@ -187,10 +201,10 @@
       <screen x="0" y="0" width="1207" height="720" />
     </state>
     <state x="197" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1207.720@0.0.1207.720" timestamp="1591155679313" />
-    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser" timestamp="1591953102939">
+    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser" timestamp="1591956699717">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser/0.0.1207.720@0.0.1207.720" timestamp="1591953102939" />
+    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser/0.0.1207.720@0.0.1207.720" timestamp="1591956699717" />
     <state x="334" y="136" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1590820418736">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
@@ -211,42 +225,42 @@
       <screen x="0" y="0" width="1207" height="720" />
     </state>
     <state x="335" y="108" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1207.720@0.0.1207.720" timestamp="1591019930673" />
-    <state x="384" y="116" key="FileChooserDialogImpl" timestamp="1591692998802">
+    <state x="384" y="116" key="FileChooserDialogImpl" timestamp="1591957420915">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state x="384" y="116" key="FileChooserDialogImpl/0.0.1207.720@0.0.1207.720" timestamp="1591692998802" />
-    <state width="1164" height="349" key="GridCell.Tab.0.bottom" timestamp="1591954375843">
+    <state x="384" y="116" key="FileChooserDialogImpl/0.0.1207.720@0.0.1207.720" timestamp="1591957420915" />
+    <state width="1164" height="192" key="GridCell.Tab.0.bottom" timestamp="1591957667840">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.0.bottom/0.0.1207.720@0.0.1207.720" timestamp="1591954375843" />
-    <state width="1164" height="349" key="GridCell.Tab.0.center" timestamp="1591954375843">
+    <state width="1164" height="192" key="GridCell.Tab.0.bottom/0.0.1207.720@0.0.1207.720" timestamp="1591957667840" />
+    <state width="1164" height="192" key="GridCell.Tab.0.center" timestamp="1591957667840">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.0.center/0.0.1207.720@0.0.1207.720" timestamp="1591954375843" />
-    <state width="1164" height="349" key="GridCell.Tab.0.left" timestamp="1591954375842">
+    <state width="1164" height="192" key="GridCell.Tab.0.center/0.0.1207.720@0.0.1207.720" timestamp="1591957667840" />
+    <state width="1164" height="192" key="GridCell.Tab.0.left" timestamp="1591957667840">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.0.left/0.0.1207.720@0.0.1207.720" timestamp="1591954375842" />
-    <state width="1164" height="349" key="GridCell.Tab.0.right" timestamp="1591954375843">
+    <state width="1164" height="192" key="GridCell.Tab.0.left/0.0.1207.720@0.0.1207.720" timestamp="1591957667840" />
+    <state width="1164" height="192" key="GridCell.Tab.0.right" timestamp="1591957667840">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.0.right/0.0.1207.720@0.0.1207.720" timestamp="1591954375843" />
-    <state width="1164" height="349" key="GridCell.Tab.1.bottom" timestamp="1591954409837">
+    <state width="1164" height="192" key="GridCell.Tab.0.right/0.0.1207.720@0.0.1207.720" timestamp="1591957667840" />
+    <state width="1164" height="188" key="GridCell.Tab.1.bottom" timestamp="1591954617808">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.1.bottom/0.0.1207.720@0.0.1207.720" timestamp="1591954409837" />
-    <state width="1164" height="349" key="GridCell.Tab.1.center" timestamp="1591954409836">
+    <state width="1164" height="188" key="GridCell.Tab.1.bottom/0.0.1207.720@0.0.1207.720" timestamp="1591954617808" />
+    <state width="1164" height="188" key="GridCell.Tab.1.center" timestamp="1591954617808">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.1.center/0.0.1207.720@0.0.1207.720" timestamp="1591954409836" />
-    <state width="1164" height="349" key="GridCell.Tab.1.left" timestamp="1591954409836">
+    <state width="1164" height="188" key="GridCell.Tab.1.center/0.0.1207.720@0.0.1207.720" timestamp="1591954617808" />
+    <state width="1164" height="188" key="GridCell.Tab.1.left" timestamp="1591954617808">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.1.left/0.0.1207.720@0.0.1207.720" timestamp="1591954409836" />
-    <state width="1164" height="349" key="GridCell.Tab.1.right" timestamp="1591954409836">
+    <state width="1164" height="188" key="GridCell.Tab.1.left/0.0.1207.720@0.0.1207.720" timestamp="1591954617808" />
+    <state width="1164" height="188" key="GridCell.Tab.1.right" timestamp="1591954617808">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="349" key="GridCell.Tab.1.right/0.0.1207.720@0.0.1207.720" timestamp="1591954409836" />
+    <state width="1164" height="188" key="GridCell.Tab.1.right/0.0.1207.720@0.0.1207.720" timestamp="1591954617808" />
     <state x="135" y="16" key="Maven.ArtifactSearchDialog" timestamp="1590935016063">
       <screen x="0" y="0" width="1207" height="720" />
     </state>

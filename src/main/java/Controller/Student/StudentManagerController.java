@@ -4,7 +4,7 @@ import Controller.ChangePasswordController;
 import Controller.LoginController;
 import Model.Entities.Account;
 import Views.LoginView;
-import Views.StudentManagerView;
+import Views.Student.StudentManagerView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,6 +21,7 @@ public class StudentManagerController {
 
         view.logoutListener(new LogoutListener());
         view.changePasswordListener(new ChangePasswordListener());
+        view.checkMarkListener(new CheckMarkListener());
     }
 
     public void showView(){
@@ -31,7 +32,7 @@ public class StudentManagerController {
         view.setVisible(false);
     }
 
-    class LogoutListener implements ActionListener {
+    private class LogoutListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -42,11 +43,19 @@ public class StudentManagerController {
         }
     }
 
-    class ChangePasswordListener implements ActionListener{
+    private class ChangePasswordListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
             ChangePasswordController changePasswordController = new ChangePasswordController(account);
+        }
+    }
+
+    private class CheckMarkListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            TraCuuDiemController traCuuDiemController = new TraCuuDiemController(view);
         }
     }
 }

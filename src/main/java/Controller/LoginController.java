@@ -5,7 +5,7 @@ import Controller.Teacher.TeacherManagerController;
 import Model.Entities.Account;
 import Model.ManageAccount;
 import Views.LoginView;
-import Views.StudentManagerView;
+import Views.Student.StudentManagerView;
 import Views.Teacher.TeacherManagerView;
 
 import java.awt.event.ActionEvent;
@@ -58,6 +58,9 @@ public class LoginController {
                 else {
                     view.showMessage("Tên đăng nhập hoặc mật khẩu chưa đúng");
                 }
+            }
+            else{
+                view.showMessage("Tên đăng nhập hoặc mật khẩu chưa đúng");
             }
         }
     }
