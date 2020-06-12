@@ -1,5 +1,6 @@
 package Views.Teacher;
 
+import Controller.Teacher.QuanLyDiemController;
 import Model.Entities.ScoreSheet;
 import Model.Entities.Student;
 import Model.ManageClass;
@@ -7,8 +8,7 @@ import Model.ManageClass;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,11 +23,17 @@ public class QuanLyDiemView extends JFrame{
     private JLabel passLabel;
     private JLabel failedLabel;
     private JScrollPane scrollPanel;
+    private JTextField diemGKField;
+    private JTextField diemCKField;
+    private JTextField diemKhacField;
+    private JTextField diemTKField;
+    private JButton updateButton;
+    private JLabel updateLabel;
 
     public QuanLyDiemView(){
         this.setTitle("Quản lý điểm của sinh viên");
         panel1.setBorder(BorderFactory.createLineBorder(Color.blue));
-        panel1.setPreferredSize(new Dimension(500, 600));
+        panel1.setPreferredSize(new Dimension(800, 600));
 
         //ComboBoxClass
         ManageClass manageClass = new ManageClass();
@@ -126,14 +132,62 @@ public class QuanLyDiemView extends JFrame{
     }
 
     public void setSumStudentsLabel(int x){
-        sumStudentsLabel.setText(sumStudentsLabel.getText() + " " + x);
+        sumStudentsLabel.setText("Tổng số sinh viên: " + x);
     }
 
     public void setPassLabel(int pass, float percent){
-        passLabel.setText(passLabel.getText() + " " + pass + " (" + percent + "%)");
+        passLabel.setText("Tổng số sinh viên đậu: " + pass + " (" + percent + "%)");
     }
 
     public void setFailedLabel(int failed, float percent){
-        failedLabel.setText(failedLabel.getText() + " " + failed + " (" + percent + "%)");
+        failedLabel.setText("Tổng số sinh viên rớt: " + failed + " (" + percent + "%)");
+    }
+
+    public void tableAddMouseListener(MouseListener mouseAdapter){
+        table1.addMouseListener(mouseAdapter);
+    }
+
+    public void updateListener(ActionListener listener){
+        updateButton.addActionListener(listener);
+    }
+
+    public void setDiemGKField(String x){
+        diemGKField.setText(x);
+    }
+
+    public void setDiemCKField(String x){
+        diemCKField.setText(x);
+    }
+
+    public void setDiemKhacField(String x){
+        diemKhacField.setText(x);
+    }
+
+    public void setDiemTKField(String x){
+        diemTKField.setText(x);
+    }
+
+    public float getDiemGKUpdated(){
+        return Float.parseFloat(diemGKField.getText());
+    }
+
+    public float getDiemCKUpdated(){
+        return Float.parseFloat(diemCKField.getText());
+    }
+
+    public float getDiemKhacUpdated(){
+        return Float.parseFloat(diemKhacField.getText());
+    }
+
+    public float getDiemTKUpdated(){
+        return Float.parseFloat(diemTKField.getText());
+    }
+
+    public void setUpdateLabel(String m){
+        updateLabel.setText("Cập nhật điểm của sinh viên " + m + ":");
+    }
+
+    public JTable getTable(){
+        return table1;
     }
 }

@@ -2,6 +2,7 @@ package Controller.Teacher;
 
 import Model.Entities.Schedule;
 import Model.Entities.ScoreSheet;
+import Model.Entities.StudentsInClass;
 import Model.Entities.Subject;
 import Model.ManageClass;
 import Model.ManageSchedule;
@@ -12,10 +13,7 @@ import Views.Teacher.QuanLyDiemView;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.event.*;
 import java.io.File;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -30,6 +28,8 @@ public class QuanLyDiemController {
         view.classComboBoxListener(new ClassComboBoxItemListener());
         view.importListener(new ImportListener());
         view.watchListener(new WatchListener());
+        view.tableAddMouseListener(new TableMouseClickListener());
+        view.updateListener(new UpdateListener());
     }
 
     private class ClassComboBoxItemListener implements ItemListener {
@@ -108,7 +108,7 @@ public class QuanLyDiemController {
             String subNo = manageSubject.getSubjectAtSubName(view.getSubName()).getSubNo();
             ManageScoreSheet manageScoreSheet = new ManageScoreSheet();
             List<ScoreSheet> scoreSheetList =  manageScoreSheet.getScoreSheetInAClass(classNo, subNo);
-            if (scoreSheetList.isEmpty()){
+            if (scoreSheetList == null){
                 view.showMessage("Lớp này chưa có bảng điểm");
                 return;
             }
@@ -128,6 +128,70 @@ public class QuanLyDiemController {
             percent = Float.valueOf(decimalFormat.format(percent));
             view.setPassLabel(passed,percent);
             view.setFailedLabel(scoreSheetList.size() - passed, 100 - percent);
+        }
+    }
+
+    private class TableMouseClickListener implements MouseListener {
+
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            JTable table = view.getTable();
+            int i = table.getSelectedRow();
+            view.setDiemGKField(table.getModel().getValueAt(i,2).toString());
+            view.setDiemCKField(table.getModel().getValueAt(i,3).toString());
+            view.setDiemKhacField(table.getModel().getValueAt(i,4).toString());
+            view.setDiemTKField(table.getModel().getValueAt(i,5).toString());
+            view.setUpdateLabel(table.getModel().getValueAt(i,0).toString());
+        }
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseEntered(MouseEvent e) {
+
+        }
+
+        @Override
+        public void mouseExited(MouseEvent e) {
+
+        }
+    }
+
+    private class UpdateListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JTable table = view.getTable();
+            int i = table.getSelectedRow();
+            String mssv = table.getModel().getValueAt(i,0).toString();
+            float diemGK = view.getDiemGKUpdated();
+            float diemCK = view.getDiemCKUpdated();
+            float diemKhac = view.getDiemKhacUpdated();
+            float diemTK = view.getDiemTKUpdated();
+
+            ManageSubject manageSubject = new ManageSubject();
+            String subNo = manageSubject.getSubjectAtSubName(view.getSubName()).getSubNo();
+            ManageClass manageClass = new ManageClass();
+            int classNo = manageClass.getClassAtClassName(view.getClassName()).getStt();
+            ManageScoreSheet manageScoreSheet = new ManageScoreSheet();
+            ScoreSheet record = manageScoreSheet.getARecord(classNo,subNo,mssv);
+            record.setMidTermScore(diemGK);
+            record.setFinalTermScore(diemCK);
+            record.setAnotherScore(diemKhac);
+            record.setFinalGrade(diemTK);
+            manageScoreSheet.dropARecord(classNo, subNo, mssv);
+            manageScoreSheet.insertInto(record);
+
+            view.showMessage("Cập nhật điểm thành công");
+            view.clearDataTable();
         }
     }
 }
