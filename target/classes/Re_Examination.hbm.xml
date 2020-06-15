@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.Entities.Re_Examination" table="dotphuckhao" catalog="quanlydiemsv">
+        <composite-id name="key" class="Model.Entities.PrimaryKey_Re_Examination">
+            <key-property name="id" column="Masodotphuckhao" type="int" />
+            <key-property name="beginDate" column="ngaybatdau" type="java.lang.String"/>
+            <key-property name="endingDate" column="ngayketthuc" type="java.lang.String"/>
+        </composite-id>
+    </class>
+</hibernate-mapping>

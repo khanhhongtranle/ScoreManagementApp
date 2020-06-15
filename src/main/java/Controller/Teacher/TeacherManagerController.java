@@ -25,6 +25,7 @@ public class TeacherManagerController {
         view.manageScheduleListener(new ManageScheduleListener());
         view.manageClassListener(new ManageClassListener());
         view.manageMarkListener(new ManageMark());
+        view.manageComplainListener(new ManageComplainListener());
     }
 
     public void showView(){
@@ -83,6 +84,14 @@ public class TeacherManagerController {
         @Override
         public void actionPerformed(ActionEvent e) {
             QuanLyDiemController quanLyDiemController = new QuanLyDiemController();
+        }
+    }
+
+    private class ManageComplainListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            QuanLyPhucKhaoController quanLyPhucKhaoController = new QuanLyPhucKhaoController();
         }
     }
 }
