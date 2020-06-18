@@ -14,6 +14,7 @@ public class StudentManagerView extends JFrame {
     private JButton changePasswordButton;
     private JButton logoutButton;
     private JLabel label;
+    private JButton checkButton;
     private Account account;
 
     public StudentManagerView(Account account) {

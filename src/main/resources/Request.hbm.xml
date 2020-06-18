@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Model.Entities.RequestsForRe" table="donphuckhao" catalog="quanlydiemsv">
+        <composite-id name="key" class="Model.Entities.PrimaryKey_RequestsForRe">
+            <key-property name="id_re" column="madotphuckhao" type="java.lang.Integer" />
+            <key-property name="subNo" column="MaMonHoc_PK" type="java.lang.String"/>
+            <key-property name="mssv" column="MSSV_PK" type="java.lang.String"/>
+        </composite-id>
+        <property name="scoreCol" type="java.lang.String">
+            <column length="50" name="cotdiem_pk" />
+        </property>
+        <property name="newScore" type="float">
+            <column length="50" name="diemmongmuon" />
+        </property>
+        <property name="theReason" type="java.lang.String">
+            <column length="100" name="lydo" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column length="50" name="tinhtrang" />
+        </property>
+    </class>
+</hibernate-mapping>

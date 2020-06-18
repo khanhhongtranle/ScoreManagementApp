@@ -38,5 +38,6 @@
         <mapping resource="StdInClass.hbm.xml"/>
         <mapping resource="ScoreSheet.hbm.xml"/>
         <mapping resource="Re_Examination.hbm.xml"/>
+        <mapping resource="Request.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

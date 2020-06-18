@@ -22,6 +22,7 @@ public class StudentManagerController {
         view.logoutListener(new LogoutListener());
         view.changePasswordListener(new ChangePasswordListener());
         view.checkMarkListener(new CheckMarkListener());
+        view.complainListener(new ComplainListener());
     }
 
     public void showView(){
@@ -56,6 +57,14 @@ public class StudentManagerController {
         @Override
         public void actionPerformed(ActionEvent e) {
             TraCuuDiemController traCuuDiemController = new TraCuuDiemController(view);
+        }
+    }
+
+    private class ComplainListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            NopPhucKhaoController nopPhucKhaoController = new NopPhucKhaoController(account);
         }
     }
 }
