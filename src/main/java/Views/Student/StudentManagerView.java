@@ -47,6 +47,10 @@ public class StudentManagerView extends JFrame {
         complainButton.addActionListener(actionListener);
     }
 
+    public void checkListener(ActionListener actionListener){
+        checkButton.addActionListener(actionListener);
+    }
+
     public String getMSSV(){
         return account.getUsername();
     }

@@ -111,4 +111,59 @@ public class ManageRequestForRe {
         }
         return null;
     }
+
+    public List<RequestsForRe> getRecordsByMSSV(String MSSV){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List<RequestsForRe> record = null;
+        try{
+            String hql = "SELECT a FROM RequestsForRe as a where a.key.mssv = :ms";
+            Query query= session.createQuery(hql);
+            query.setParameter("ms", MSSV);
+            record =  query.list();
+            transaction.commit();
+            if (record.size() == 0){
+                return null;
+            }
+            return record;
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return null;
+    }
+
+    public List<RequestsForRe> getRecordsByMSSVAndId_Re(int id_re , String MSSV){
+        if (!session.isOpen()){
+            session = HibernateUtil.getSessionFactory().openSession();
+        }
+        transaction = session.beginTransaction();
+        List<RequestsForRe> record = null;
+        try{
+            String hql = "SELECT a FROM RequestsForRe as a where a.key.mssv = :ms and a.key.id_re = :id";
+            Query query= session.createQuery(hql);
+            query.setParameter("ms", MSSV);
+            query.setParameter("id", id_re);
+            record =  query.list();
+            transaction.commit();
+            if (record.size() == 0){
+                return null;
+            }
+            return record;
+        }catch (HibernateException e){
+            if (transaction != null){
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+        return null;
+    }
 }
