@@ -22,12 +22,11 @@ public class XoaSvKhoiLopTheoMonController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            int STTLop = view.getClassNo();
             String MaMonHoc = view.getSubNo();
             String MSSV = view.getMSSV();
 
             ManageStudentsInClass manageStudentsInClass = new ManageStudentsInClass();
-            manageStudentsInClass.dropARecord(STTLop, MaMonHoc, MSSV);
+            manageStudentsInClass.dropARecord(MaMonHoc, MSSV);
             view.showMessage("Đã xóa thành công");
             view.setVisible(false);
         }

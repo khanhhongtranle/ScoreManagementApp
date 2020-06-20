@@ -39,6 +39,10 @@ public class QuanLyLopController {
                 ManageSubject manageSubject = new ManageSubject();
                 ArrayList<Schedule> schedule = (ArrayList<Schedule>) manageSchedule.getAtClass(STTLop);
                 view.cleanItemInComboBoxSubjects();
+                if (schedule == null){
+                    view.showMessage("Lớp này chưa cập nhật thời khóa biều");
+                    return;
+                }
                 for (Schedule sch : schedule) {
                     Subject sub = manageSubject.getSubjectAtSubNo(sch.getSubNo());
                     view.addItemInComboBoxSubjects(sub.getSubName());

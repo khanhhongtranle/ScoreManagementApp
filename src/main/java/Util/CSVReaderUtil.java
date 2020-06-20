@@ -67,7 +67,7 @@ public class CSVReaderUtil {
                     while ((line = reader.readNext()) != null){
                         Schedule schedule = new Schedule();
                         schedule.setSubNo(line[1]);
-                        schedule.setRoom(line[2]);
+                        schedule.setRoom(line[3]);
                         schedules.add(schedule);
                     }
                     listSchedule = schedules;

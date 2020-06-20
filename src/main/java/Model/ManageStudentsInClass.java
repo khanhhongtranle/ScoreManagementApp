@@ -87,15 +87,14 @@ public class ManageStudentsInClass {
         return null;
     }
 
-    public void dropARecord(int STTLop, String MaMonHoc, String MSSV){
+    public void dropARecord( String MaMonHoc, String MSSV){
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();
         }
         transaction = session.beginTransaction();
         try{
-            String hql = "DELETE StudentsInClass as a WHERE a.key.classNo = :s and a.key.subNo = :m and a.key.MSSV = :ms ";
+            String hql = "DELETE StudentsInClass as a WHERE a.key.subNo = :m and a.key.MSSV = :ms ";
             Query query = session.createQuery(hql);
-            query.setParameter("s", STTLop);
             query.setParameter("m", MaMonHoc);
             query.setParameter("ms", MSSV);
             query.executeUpdate();

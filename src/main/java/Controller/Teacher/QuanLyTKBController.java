@@ -60,17 +60,17 @@ public class QuanLyTKBController {
             List<Subject> subjects = reader.getListSubject();
             ManageSchedule manageSchedule = new ManageSchedule();
             ManageSubject manageSubject = new ManageSubject();
-            ManageClass manageClass = new ManageClass();
-            int STTLop = manageClass.getClassAtClassName(view.getClassToImport()).getStt();
-            for (Schedule schedule1 : schedule) {
-                schedule1.setClassNo(STTLop);
-                manageSchedule.insertInto(schedule1);
-            }
             //mon hoc nao da ton tai thi khong them nua
             for (Subject subject : subjects){
                 if (manageSubject.getSubjectAtSubNo(subject.getSubNo()) == null) {
                     manageSubject.insertInto(subject);
                 }
+            }
+            ManageClass manageClass = new ManageClass();
+            int STTLop = manageClass.getClassAtClassName(view.getClassToImport()).getStt();
+            for (Schedule schedule1 : schedule) {
+                schedule1.setClassNo(STTLop);
+                manageSchedule.insertInto(schedule1);
             }
 
             //danh sach lop
