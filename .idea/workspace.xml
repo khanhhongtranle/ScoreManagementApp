@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ltudjava-summer2020-1712465-bt2:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,21 +25,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="373a6f96-913b-4940-bac7-c67b5017e4fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/Student/XemDonPhucKhaoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Views/Student/XemDonPhucKhaoView.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Views/Student/XemDonPhucKhaoView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ltudjava_summer2020_1712465_bt2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/artifacts/ltudjava_summer2020_1712465_bt2_jar/ltudjava-summer2020-1712465-bt2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Student/StudentManagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Student/StudentManagerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ManageRequestForRe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ManageRequestForRe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Student/StudentManagerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Student/StudentManagerView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$ChangePasswordListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$ChangePasswordListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$CheckMarkListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$CheckMarkListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$ComplainListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$ComplainListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$LogoutListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController$LogoutListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Student/StudentManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyPhucKhaoController$TableMouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyPhucKhaoController$TableMouseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyPhucKhaoController$UpdateListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyPhucKhaoController$UpdateListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Views/Student/StudentManagerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Student/StudentManagerView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Teacher/AddAStudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Teacher/AddAStudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyDiemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyDiemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyLopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyLopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLySinhVienController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLySinhVienController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyTKBController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Teacher/QuanLyTKBController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Teacher/ThemSvVaoLopTheoMonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Teacher/ThemSvVaoLopTheoMonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Entities/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Entities/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Entities/PrimaryKey_StudentsInClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Entities/PrimaryKey_StudentsInClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Entities/StudentsInClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Entities/StudentsInClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ManageScoreSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ManageScoreSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/ManageStudentsInClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/ManageStudentsInClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Util/CSVReaderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Util/CSVReaderUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Student/NopPhucKhaoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Student/NopPhucKhaoView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyDiemView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyDiemView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLySinhVienView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLySinhVienView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyTKBView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Teacher/QuanLyTKBView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Views/Teacher/XoaSvKhoiLopTheoMon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Views/Teacher/XoaSvKhoiLopTheoMon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Account.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Account.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ScoreSheet.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ScoreSheet.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/StdInClass.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/StdInClass.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/AddAStudentController$ButtonListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/AddAStudentController$ButtonListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/AddAStudentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/AddAStudentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyDiemController$TableMouseClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyDiemController$TableMouseClickListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyDiemController$UpdateListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyDiemController$UpdateListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyDiemController$WatchListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyDiemController$WatchListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController$AddListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController$AddListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController$ConfirmListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController$ConfirmListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController$ImportListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController$ImportListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLySinhVienController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyTKBController$ConfirmListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyTKBController$ConfirmListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyTKBController$XemListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controller/Teacher/QuanLyTKBController$XemListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Util/CSVReaderUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Util/CSVReaderUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/Student/NopPhucKhaoView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Student/NopPhucKhaoView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/Teacher/QuanLyDiemView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Teacher/QuanLyDiemView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/Teacher/QuanLySinhVienView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Teacher/QuanLySinhVienView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Views/Teacher/QuanLyTKBView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Views/Teacher/QuanLyTKBView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +101,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MD5_password" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32873562" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -162,7 +193,8 @@
       <workItem from="1592210234669" duration="3404000" />
       <workItem from="1592376580494" duration="10207000" />
       <workItem from="1592493122922" duration="4502000" />
-      <workItem from="1592553433958" duration="1694000" />
+      <workItem from="1592553433958" duration="9101000" />
+      <workItem from="1592617111347" duration="2518000" />
     </task>
     <servers />
   </component>
@@ -207,14 +239,18 @@
       <screen x="0" y="0" width="1207" height="720" />
     </state>
     <state x="197" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1207.720@0.0.1207.720" timestamp="1591155679313" />
-    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser" timestamp="1592554675205">
+    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser" timestamp="1592619040108">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser/0.0.1207.720@0.0.1207.720" timestamp="1592554675205" />
+    <state x="410" y="67" key="#com.intellij.ide.util.MemberChooser/0.0.1207.720@0.0.1207.720" timestamp="1592619040108" />
     <state x="334" y="136" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1590820418736">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
     <state x="334" y="136" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1207.720@0.0.1207.720" timestamp="1590820418736" />
+    <state x="254" y="150" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592571329231">
+      <screen x="0" y="0" width="1207" height="720" />
+    </state>
+    <state x="254" y="150" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1207.720@0.0.1207.720" timestamp="1592571329231" />
     <state x="275" y="91" width="657" height="569" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog" timestamp="1590916520448">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
@@ -239,22 +275,22 @@
       <screen x="0" y="0" width="1207" height="720" />
     </state>
     <state x="384" y="116" key="FileChooserDialogImpl/0.0.1207.720@0.0.1207.720" timestamp="1591957420915" />
-    <state width="1164" height="85" key="GridCell.Tab.0.bottom" timestamp="1592554583828">
+    <state width="1164" height="173" key="GridCell.Tab.0.bottom" timestamp="1592618960656">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="85" key="GridCell.Tab.0.bottom/0.0.1207.720@0.0.1207.720" timestamp="1592554583828" />
-    <state width="1164" height="85" key="GridCell.Tab.0.center" timestamp="1592554583827">
+    <state width="1164" height="173" key="GridCell.Tab.0.bottom/0.0.1207.720@0.0.1207.720" timestamp="1592618960656" />
+    <state width="1164" height="173" key="GridCell.Tab.0.center" timestamp="1592618960656">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="85" key="GridCell.Tab.0.center/0.0.1207.720@0.0.1207.720" timestamp="1592554583827" />
-    <state width="1164" height="85" key="GridCell.Tab.0.left" timestamp="1592554583825">
+    <state width="1164" height="173" key="GridCell.Tab.0.center/0.0.1207.720@0.0.1207.720" timestamp="1592618960656" />
+    <state width="1164" height="173" key="GridCell.Tab.0.left" timestamp="1592618960656">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="85" key="GridCell.Tab.0.left/0.0.1207.720@0.0.1207.720" timestamp="1592554583825" />
-    <state width="1164" height="85" key="GridCell.Tab.0.right" timestamp="1592554583827">
+    <state width="1164" height="173" key="GridCell.Tab.0.left/0.0.1207.720@0.0.1207.720" timestamp="1592618960656" />
+    <state width="1164" height="173" key="GridCell.Tab.0.right" timestamp="1592618960656">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state width="1164" height="85" key="GridCell.Tab.0.right/0.0.1207.720@0.0.1207.720" timestamp="1592554583827" />
+    <state width="1164" height="173" key="GridCell.Tab.0.right/0.0.1207.720@0.0.1207.720" timestamp="1592618960656" />
     <state width="1164" height="245" key="GridCell.Tab.1.bottom" timestamp="1592498773954">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
@@ -275,10 +311,10 @@
       <screen x="0" y="0" width="1207" height="720" />
     </state>
     <state x="135" y="16" key="Maven.ArtifactSearchDialog/0.0.1207.720@0.0.1207.720" timestamp="1590935016063" />
-    <state x="5" y="9" key="SettingsEditor" timestamp="1592380120404">
+    <state x="5" y="0" key="SettingsEditor" timestamp="1592571374455">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state x="5" y="9" key="SettingsEditor/0.0.1207.720@0.0.1207.720" timestamp="1592380120404" />
+    <state x="5" y="0" key="SettingsEditor/0.0.1207.720@0.0.1207.720" timestamp="1592571374455" />
     <state x="484" y="155" key="UIDesigner.ListEditorDialog" timestamp="1591070822643">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
@@ -295,10 +331,10 @@
       <screen x="0" y="0" width="1207" height="720" />
     </state>
     <state x="311" y="118" key="refactoring.ChangeSignatureDialog/0.0.1207.720@0.0.1207.720" timestamp="1591954074742" />
-    <state x="267" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1591066750171">
+    <state x="267" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1592556268092">
       <screen x="0" y="0" width="1207" height="720" />
     </state>
-    <state x="267" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1207.720@0.0.1207.720" timestamp="1591066750171" />
+    <state x="267" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1207.720@0.0.1207.720" timestamp="1592556268092" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

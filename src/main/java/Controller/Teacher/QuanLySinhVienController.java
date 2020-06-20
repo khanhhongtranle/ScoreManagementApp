@@ -7,6 +7,7 @@ import Views.Teacher.QuanLySinhVienView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuanLySinhVienController {
@@ -36,8 +37,15 @@ public class QuanLySinhVienController {
         public void actionPerformed(ActionEvent e) {
             ManageClass manageClass = new ManageClass();
             ManageStudent manageStudent = new ManageStudent();
-            int STT = manageClass.getClassAtClassName(view.getStringInComBox()).getStt();
-            List<Student> list = manageStudent.getAllOfStudentInClass(STT);
+            List<Student> list = new ArrayList<>();
+            int STT = 0;
+            if (view.getStringInComBox().equalsIgnoreCase("Tất cả")){
+                list = manageStudent.getAllOfStudent();
+            }
+            else{
+                STT = manageClass.getClassAtClassName(view.getStringInComBox()).getStt();
+                list = manageStudent.getAllOfStudentInClass(STT);
+            }
             view.setUpDataTable(list);
         }
     }

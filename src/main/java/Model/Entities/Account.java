@@ -6,20 +6,20 @@ import java.io.Serializable;
 public class Account implements Serializable {
     protected String username;
     protected String password;
-    protected Integer MSSV;
+    protected String MSSV;
 
     public Account(){
 
     }
 
-    public Account(String u, String p, Integer m){
+    public Account(String u, String p, String m){
         this.username = u;
         this.password = p;
         this.MSSV = m;
     }
 
 
-    public Integer getMSSV() {
+    public String getMSSV() {
         return MSSV;
     }
 
@@ -31,7 +31,7 @@ public class Account implements Serializable {
         return username;
     }
 
-    public void setMSSV(Integer MSSV) {
+    public void setMSSV(String MSSV) {
         this.MSSV = MSSV;
     }
 

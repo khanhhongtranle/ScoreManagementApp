@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="Model.Entities.StudentsInClass" table="danhsachlop" catalog="quanlydiemsv">
         <composite-id name="key" class="Model.Entities.PrimaryKey_StudentsInClass">
-            <key-property name="classNo" column="STTLop" type="java.lang.Integer" />
+            <!--key-property name="classNo" column="STTLop" type="java.lang.Integer" /-->
             <key-property name="subNo" column="MaMonHoc" type="java.lang.String"/>
             <key-property name="MSSV" column="MSSV" type="java.lang.String"/>
         </composite-id>

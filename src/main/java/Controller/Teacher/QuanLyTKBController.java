@@ -75,7 +75,13 @@ public class QuanLyTKBController {
 
             //danh sach lop
             ManageStudent manageStudent = new ManageStudent();
-            List<Student> studentList = manageStudent.getAllOfStudentInClass(STTLop); //lay danh sach tat ca hoc sinh cua lop do
+            List<Student> studentList = manageStudent.getAllOfStudentInClass(STTLop);//lay danh sach tat ca hoc sinh cua lop do
+            /*if (studentList == null){
+                //ds lop chua import
+                view.showMessage("Thêm thời khóa biểu thành công");
+                view.setVisible(false);
+                return;
+            }*/
             //mac dinh 1 hs hoc tat ca mon trong thoi khoa bieu
 
             List<StudentsInClass> studentsInClassList = new ArrayList<StudentsInClass>();
@@ -83,7 +89,6 @@ public class QuanLyTKBController {
             for (Schedule schedule1 : schedule){
                 for (Student std : studentList) {
                     StudentsInClass s = new StudentsInClass();
-                    s.setClassNo(schedule1.getKey().getClassNo());
                     s.setSubNo(schedule1.getKey().getSubNo());
                     s.setMSSV(std.getMSSV());
                     studentsInClassList.add(s);

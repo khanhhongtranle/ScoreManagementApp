@@ -54,10 +54,10 @@ public class CSVReaderUtil {
                     List<Student> students = new ArrayList<Student>();
                     while ((line = reader.readNext()) != null){
                         Student student = new Student();
-                        student.setMSSV(line[0]);
-                        student.setStudentName(line[1]);
-                        student.setStudentSex(line[2]);
-                        student.setStudentNationID(line[3]);
+                        student.setMSSV(line[1]);
+                        student.setStudentName(line[2]);
+                        student.setStudentSex(line[3]);
+                        student.setStudentNationID(line[4]);
                         students.add(student);
                     }
                     this.listStudent = students;
@@ -66,7 +66,7 @@ public class CSVReaderUtil {
                     List<Schedule> schedules = new ArrayList<Schedule>();
                     while ((line = reader.readNext()) != null){
                         Schedule schedule = new Schedule();
-                        schedule.setSubNo(line[0]);
+                        schedule.setSubNo(line[1]);
                         schedule.setRoom(line[2]);
                         schedules.add(schedule);
                     }
@@ -76,8 +76,8 @@ public class CSVReaderUtil {
                     List<Subject> subjects = new ArrayList<Subject>();
                     while ((line = reader.readNext()) != null){
                         Subject subject = new Subject();
-                        subject.setSubNo(line[0]);
-                        subject.setSubName(line[1]);
+                        subject.setSubNo(line[1]);
+                        subject.setSubName(line[2]);
                         subjects.add(subject);
                     }
                     listSubject = subjects;
@@ -86,12 +86,12 @@ public class CSVReaderUtil {
                     List<ScoreSheet> scoreSheets = new ArrayList<>();
                     while ((line = reader.readNext()) != null){
                         ScoreSheet scoreSheet1 = new ScoreSheet();
-                        scoreSheet1.getKey().setMSSV(line[0]);
-                        scoreSheet1.setStudentName(line[1]);
-                        scoreSheet1.setMidTermScore(Float.parseFloat(line[2]));
-                        scoreSheet1.setFinalTermScore(Float.parseFloat(line[3]));
-                        scoreSheet1.setAnotherScore(Float.parseFloat(line[4]));
-                        scoreSheet1.setFinalGrade(Float.parseFloat(line[5]));
+                        scoreSheet1.getKey().setMSSV(line[1]);
+                        scoreSheet1.setStudentName(line[2]);
+                        scoreSheet1.setMidTermScore(Float.parseFloat(line[3]));
+                        scoreSheet1.setFinalTermScore(Float.parseFloat(line[4]));
+                        scoreSheet1.setAnotherScore(Float.parseFloat(line[5]));
+                        scoreSheet1.setFinalGrade(Float.parseFloat(line[6]));
                         scoreSheets.add(scoreSheet1);
                     }
                     listScore = scoreSheets;

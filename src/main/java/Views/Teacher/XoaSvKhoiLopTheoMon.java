@@ -32,7 +32,7 @@ public class XoaSvKhoiLopTheoMon extends JFrame{
 
         //comboBoxStudents
         ManageStudentsInClass manageStudentsInClass = new ManageStudentsInClass();
-        List<String> listMSSV = manageStudentsInClass.getListMSSVInAClass(getClassNo(), getSubNo());
+        List<String> listMSSV = manageStudentsInClass.getListMSSVInAClass(getSubNo());
         for (String s : listMSSV){
             comboBox1.addItem(s);
         }

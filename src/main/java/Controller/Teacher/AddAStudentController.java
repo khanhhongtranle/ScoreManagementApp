@@ -1,12 +1,17 @@
 package Controller.Teacher;
 
+import Model.Entities.Schedule;
 import Model.Entities.Student;
+import Model.Entities.StudentsInClass;
 import Model.ManageClass;
+import Model.ManageSchedule;
 import Model.ManageStudent;
+import Model.ManageStudentsInClass;
 import Views.Teacher.AddAStudentView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class AddAStudentController {
     AddAStudentView view;
@@ -36,6 +41,19 @@ public class AddAStudentController {
             }
             Student student = new Student(view.getMSSV(),view.getNameOfStudent(),view.getSex(),view.getCMND(),STTClass);
             manageStudent.insertInto(student);
+
+            //them sinh vien do vao ds lop theo mon
+            ManageSchedule manageSchedule = new ManageSchedule();
+            ManageStudentsInClass manageStudentsInClass = new ManageStudentsInClass();
+            List<Schedule> listSchedule = manageSchedule.getAtClass(student.getClassNo());
+            if (listSchedule!=null){
+                for (Schedule s : listSchedule){
+                    StudentsInClass std = new StudentsInClass();
+                    std.getKey().setMSSV(student.getMSSV());
+                    std.getKey().setSubNo(s.getSubNo());
+                    manageStudentsInClass.insertInto(std);
+                }
+            }
 
             view.setVisible(false);
         }

@@ -33,17 +33,16 @@ public class ManageStudentsInClass {
         }
     }
 
-    public List<String> getListMSSVInAClass(int STTLop, String MaMonHoc){
+    public List<String> getListMSSVInAClass(String MaMonHoc){
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();
         }
         transaction = session.beginTransaction();
         List<String> std = null;
         try{
-            String hql = "SELECT a.key.MSSV FROM StudentsInClass as a where a.key.subNo = :m and a.key.classNo = :stt";
+            String hql = "SELECT a.key.MSSV FROM StudentsInClass as a where a.key.subNo = :m";
             Query query= session.createQuery(hql);
             query.setParameter("m",MaMonHoc);
-            query.setParameter("stt", STTLop);
             std = query.list();
             transaction.commit();
             if (std.size() == 0){

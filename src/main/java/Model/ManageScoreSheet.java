@@ -1,9 +1,6 @@
 package Model;
 
-import Model.Entities.PrimaryKey_StudentsInClass;
-import Model.Entities.Schedule;
 import Model.Entities.ScoreSheet;
-import Model.Entities.Student;
 import Util.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -36,16 +33,15 @@ public class ManageScoreSheet {
         }
     }
 
-    public List<ScoreSheet> getScoreSheetInAClass(int SttLop, String MaMonHoc){
+    public List<ScoreSheet> getScoreSheetInAClass( String MaMonHoc){
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();
         }
         transaction = session.beginTransaction();
         List<ScoreSheet> list = null;
         try{
-            String hql = "SELECT a FROM ScoreSheet as a where a.key.classNo = :m and a.key.subNo = :s";
+            String hql = "SELECT a FROM ScoreSheet as a where a.key.subNo = :s";
             Query query= session.createQuery(hql);
-            query.setParameter("m",SttLop);
             query.setParameter("s", MaMonHoc);
             list = query.list();
             transaction.commit();
@@ -64,16 +60,15 @@ public class ManageScoreSheet {
         return null;
     }
 
-    public ScoreSheet getARecord(int STTLop, String MaMonHoc, String MSSV){
+    public ScoreSheet getARecord( String MaMonHoc, String MSSV){
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();
         }
         transaction = session.beginTransaction();
         List<ScoreSheet> record = null;
         try{
-            String hql = "SELECT a FROM ScoreSheet as a where a.key.classNo = :m and a.key.subNo = :s and a.key.MSSV = :ms";
+            String hql = "SELECT a FROM ScoreSheet as a where a.key.subNo = :s and a.key.MSSV = :ms";
             Query query= session.createQuery(hql);
-            query.setParameter("m",STTLop);
             query.setParameter("s", MaMonHoc);
             query.setParameter("ms", MSSV);
             record =  query.list();
@@ -121,15 +116,14 @@ public class ManageScoreSheet {
         return null;
     }
 
-    public void dropARecord(int STTLop, String MaMonHoc, String MSSV){
+    public void dropARecord( String MaMonHoc, String MSSV){
         if (!session.isOpen()){
             session = HibernateUtil.getSessionFactory().openSession();
         }
         transaction = session.beginTransaction();
         try{
-            String hql = "DELETE ScoreSheet as a WHERE a.key.classNo = :s and a.key.subNo = :m and a.key.MSSV = :ms ";
+            String hql = "DELETE ScoreSheet as a WHERE  a.key.subNo = :m and a.key.MSSV = :ms ";
             Query query = session.createQuery(hql);
-            query.setParameter("s", STTLop);
             query.setParameter("m", MaMonHoc);
             query.setParameter("ms", MSSV);
             query.executeUpdate();

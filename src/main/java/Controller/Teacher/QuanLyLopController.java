@@ -57,10 +57,10 @@ public class QuanLyLopController {
             ManageStudent manageStudent = new ManageStudent();
             ManageStudentsInClass manageStudentsInClass = new ManageStudentsInClass();
 
-            int STTLop = manageClass.getClassAtClassName(view.getClassName()).getStt();
+            //int STTLop = manageClass.getClassAtClassName(view.getClassName()).getStt();
             String MaMonHoc = manageSubject.getSubjectAtSubName(view.getSubName()).getSubNo();
 
-            List<String> dsMSSV = manageStudentsInClass.getListMSSVInAClass(STTLop, MaMonHoc);
+            List<String> dsMSSV = manageStudentsInClass.getListMSSVInAClass( MaMonHoc);
             List<Student> dsHs = new ArrayList<Student>();
             for (String s : dsMSSV){
                 Student std = manageStudent.getStudentAtMSSV(s);

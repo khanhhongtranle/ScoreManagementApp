@@ -46,6 +46,9 @@ public class QuanLyDiemView extends JFrame{
         //Table
         table1 = createTable();
 
+        //update button
+        setEnableUpdateButton(false);
+
         this.setContentPane(panel1);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();
@@ -53,7 +56,7 @@ public class QuanLyDiemView extends JFrame{
 
     public JTable createTable(){
         DefaultTableModel defaultTableModel = (DefaultTableModel) table1.getModel();
-        String columnName[] = {"MSSV", "Họ tên", "Điểm GK", "Điểm CK", "Điểm khác", "Điểm tổng", "Ghi chú"};
+        String columnName[] = {"STT","MSSV", "Họ tên", "Điểm GK", "Điểm CK", "Điểm khác", "Điểm tổng", "Ghi chú"};
         for(int i = 0; i < columnName.length; i++) {
             defaultTableModel.addColumn(columnName[i]);
         }
@@ -79,19 +82,20 @@ public class QuanLyDiemView extends JFrame{
         DefaultTableModel defaultTableModel = (DefaultTableModel) table1.getModel();
 
         for (int i = 0; i < listData.size(); i++) {
-            String[] data = new String[7];
+            String[] data = new String[8];
 
-            data[0] = listData.get(i).getKey().getMSSV();
-            data[1] = listData.get(i).getStudentName();
-            data[2] = String.valueOf(listData.get(i).getMidTermScore());
-            data[3] = String.valueOf(listData.get(i).getFinalTermScore());
-            data[4] = String.valueOf(listData.get(i).getAnotherScore());
-            data[5] = String.valueOf(listData.get(i).getFinalGrade());
+            data[0] = String.valueOf(i+1);
+            data[1] = listData.get(i).getKey().getMSSV();
+            data[2] = listData.get(i).getStudentName();
+            data[3] = String.valueOf(listData.get(i).getMidTermScore());
+            data[4] = String.valueOf(listData.get(i).getFinalTermScore());
+            data[5] = String.valueOf(listData.get(i).getAnotherScore());
+            data[6] = String.valueOf(listData.get(i).getFinalGrade());
             if (listData.get(i).getFinalGrade() >= 5){
-                data[6] = "Đậu";
+                data[7] = "Đậu";
             }
             else{
-                data[6] = "Rớt";
+                data[7] = "Rớt";
             }
 
             defaultTableModel.addRow(data);
@@ -189,5 +193,9 @@ public class QuanLyDiemView extends JFrame{
 
     public JTable getTable(){
         return table1;
+    }
+
+    public void setEnableUpdateButton(boolean b){
+        updateButton.setEnabled(b);
     }
 }

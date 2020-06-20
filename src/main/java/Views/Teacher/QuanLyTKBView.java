@@ -45,7 +45,7 @@ public class QuanLyTKBView extends JFrame {
 
     public JTable createTable(){
         DefaultTableModel defaultTableModel = (DefaultTableModel) table1.getModel();
-        String columnName[] = {"Mã môn", "Tên môn học", "Phòng học"};
+        String columnName[] = {"STT","Mã môn", "Tên môn học", "Phòng học"};
         for(int i = 0; i < columnName.length; i++) {
             defaultTableModel.addColumn(columnName[i]);
         }
@@ -73,9 +73,10 @@ public class QuanLyTKBView extends JFrame {
         for (int i = 0; i < listData.size(); i++) {
             String[] data = new String[7];
 
-            data[0] = listData.get(i).getMaMonHoc();
-            data[1] = listData.get(i).getTenMonHoc();
-            data[2] = listData.get(i).getPhongHoc();
+            data[0] = String.valueOf(i+1);
+            data[1] = listData.get(i).getMaMonHoc();
+            data[2] = listData.get(i).getTenMonHoc();
+            data[3] = listData.get(i).getPhongHoc();
 
             defaultTableModel.addRow(data);
         }

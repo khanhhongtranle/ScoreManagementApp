@@ -11,7 +11,7 @@
         <property name="password" type="java.lang.String">
             <column length="100" name="password" />
         </property>
-        <property name="MSSV" type="java.lang.Integer">
+        <property name="MSSV" type="java.lang.String">
             <column length="25" name="MSSV" />
         </property>
     </class>

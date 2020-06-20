@@ -2,7 +2,6 @@ package Controller.Teacher;
 
 import Model.Entities.Schedule;
 import Model.Entities.ScoreSheet;
-import Model.Entities.StudentsInClass;
 import Model.Entities.Subject;
 import Model.ManageClass;
 import Model.ManageSchedule;
@@ -83,7 +82,6 @@ public class QuanLyDiemController {
 
                 for(ScoreSheet scoreSheet : scoreSheetList){
                     scoreSheet.getKey().setSubNo(subNo);
-                    scoreSheet.getKey().setClassNo(classNo);
 
                     manageScoreSheet.insertInto(scoreSheet);
                 }
@@ -102,14 +100,13 @@ public class QuanLyDiemController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            ManageClass manageClass = new ManageClass();
-            int classNo = manageClass.getClassAtClassName(view.getClassName()).getStt();
             ManageSubject manageSubject = new ManageSubject();
             String subNo = manageSubject.getSubjectAtSubName(view.getSubName()).getSubNo();
             ManageScoreSheet manageScoreSheet = new ManageScoreSheet();
-            List<ScoreSheet> scoreSheetList =  manageScoreSheet.getScoreSheetInAClass(classNo, subNo);
+            List<ScoreSheet> scoreSheetList =  manageScoreSheet.getScoreSheetInAClass( subNo);
             if (scoreSheetList == null){
                 view.showMessage("Lớp này chưa có bảng điểm");
+                view.clearDataTable();
                 return;
             }
             //set table
@@ -137,11 +134,13 @@ public class QuanLyDiemController {
         public void mouseClicked(MouseEvent e) {
             JTable table = view.getTable();
             int i = table.getSelectedRow();
-            view.setDiemGKField(table.getModel().getValueAt(i,2).toString());
-            view.setDiemCKField(table.getModel().getValueAt(i,3).toString());
-            view.setDiemKhacField(table.getModel().getValueAt(i,4).toString());
-            view.setDiemTKField(table.getModel().getValueAt(i,5).toString());
-            view.setUpdateLabel(table.getModel().getValueAt(i,0).toString());
+            view.setDiemGKField(table.getModel().getValueAt(i,3).toString());
+            view.setDiemCKField(table.getModel().getValueAt(i,4).toString());
+            view.setDiemKhacField(table.getModel().getValueAt(i,5).toString());
+            view.setDiemTKField(table.getModel().getValueAt(i,6).toString());
+            view.setUpdateLabel(table.getModel().getValueAt(i,1).toString());
+
+            view.setEnableUpdateButton(true);
         }
 
         @Override
@@ -171,7 +170,7 @@ public class QuanLyDiemController {
         public void actionPerformed(ActionEvent e) {
             JTable table = view.getTable();
             int i = table.getSelectedRow();
-            String mssv = table.getModel().getValueAt(i,0).toString();
+            String mssv = table.getModel().getValueAt(i,1).toString();
             float diemGK = view.getDiemGKUpdated();
             float diemCK = view.getDiemCKUpdated();
             float diemKhac = view.getDiemKhacUpdated();
@@ -180,18 +179,23 @@ public class QuanLyDiemController {
             ManageSubject manageSubject = new ManageSubject();
             String subNo = manageSubject.getSubjectAtSubName(view.getSubName()).getSubNo();
             ManageClass manageClass = new ManageClass();
-            int classNo = manageClass.getClassAtClassName(view.getClassName()).getStt();
             ManageScoreSheet manageScoreSheet = new ManageScoreSheet();
-            ScoreSheet record = manageScoreSheet.getARecord(classNo,subNo,mssv);
+            ScoreSheet record = manageScoreSheet.getARecord(subNo,mssv);
             record.setMidTermScore(diemGK);
             record.setFinalTermScore(diemCK);
             record.setAnotherScore(diemKhac);
             record.setFinalGrade(diemTK);
-            manageScoreSheet.dropARecord(classNo, subNo, mssv);
+            manageScoreSheet.dropARecord(subNo, mssv);
             manageScoreSheet.insertInto(record);
 
             view.showMessage("Cập nhật điểm thành công");
             view.clearDataTable();
+
+            view.setEnableUpdateButton(false);
+            view.setDiemTKField("");
+            view.setDiemKhacField("");
+            view.setDiemGKField("");
+            view.setDiemCKField("");
         }
     }
 }

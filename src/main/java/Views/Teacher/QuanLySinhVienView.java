@@ -33,6 +33,7 @@ public class QuanLySinhVienView extends JFrame {
         for (String str : classes) {
             comboBox.addItem(str);
         }
+        comboBox.addItem("Tất cả");
 
         //Table
         table1 = createTable();
@@ -44,7 +45,7 @@ public class QuanLySinhVienView extends JFrame {
 
     public JTable createTable(){
         DefaultTableModel defaultTableModel = (DefaultTableModel) table1.getModel();
-        String columnName[] = {"MSSV", "Họ tên", "Giới tính", "CMND"};
+        String columnName[] = {"STT" , "MSSV", "Họ tên", "Giới tính", "CMND"};
         for(int i = 0; i < columnName.length; i++) {
             defaultTableModel.addColumn(columnName[i]);
         }
@@ -72,10 +73,11 @@ public class QuanLySinhVienView extends JFrame {
         for (int i = 0; i < listData.size(); i++) {
             String[] data = new String[7];
 
-            data[0] = listData.get(i).getMSSV();
-            data[1] = listData.get(i).getStudentName();
-            data[2] = listData.get(i).getStudentSex();
-            data[3] = listData.get(i).getStudentNationID();
+            data[0] = String.valueOf(i+1);
+            data[1] = listData.get(i).getMSSV();
+            data[2] = listData.get(i).getStudentName();
+            data[3] = listData.get(i).getStudentSex();
+            data[4] = listData.get(i).getStudentNationID();
 
             defaultTableModel.addRow(data);
         }
